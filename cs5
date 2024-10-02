@@ -1,17 +1,27 @@
 import numpy as np
+import pandas as pd
 from scipy.optimize import minimize
 import matplotlib.pyplot as plt
 
 # Generate synthetic data
 x = np.linspace(-10, 30, 100)
-e = np.random.normal(0, 1, 100)  # random error term
-y = 10 + 4*x + e  # Linear relationship with noise
+e = np.random.normal(0, 1, 100)  # Random error term
+y = 10 + 4*x + e  # Linear relationship with noise
+
+# Create a DataFrame for the input table
+data = pd.DataFrame({
+    'x': np.round(x, 6),  # Round to 6 decimal places
+    'y': np.round(y, 6)   # Round to 6 decimal places
+})
+
+# Display the first few rows of the DataFrame
+print(data.head())
 
 # Define the likelihood function (sum of squared errors)
 def likelihood(params):
-    a, b, c = params
-    y_pred = a + b*x + c*x**2
-    return np.sum((y - y_pred)**2)
+    a, b, c = params
+    y_pred = a + b*x + c*x**2
+    return np.sum((y - y_pred)**2)
 
 # Initial guesses for parameters [a, b, c]
 init_params = [10, 4, 0]
@@ -39,4 +49,4 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.title('Data and Fitted Polynomial Curve')
 plt.legend()
-plt.show(
+plt.show()
