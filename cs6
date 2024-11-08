@@ -7,7 +7,8 @@ print("Mean:", np.mean(data_1d))
 print("Count:", len(data_1d))
 print("Minimum:", np.min(data_1d))
 print("Maximum:", np.max(data_1d))
-data_2d = np.array([[0.183405, 0.221868], [0.397629, 0.408451],[0.399153, 0.373650], [0.524756, 0.611853], [0.950714, 0.156018]])
+data_2d = np.array([[0.183405, 0.221868], [0.397629, 0.408451],[0.399153, 0.373650]
+, [0.524756, 0.611853], [0.950714, 0.156018]])
 df_2d = pd.DataFrame(data_2d)
 print("\n2D Data Aggregation:")
 print("Sum (Columnwise):")
@@ -24,7 +25,8 @@ print("Maximum:")
 print(df_2d.max())
 
 data = {
-    'method': ['Astrometry', 'Eclipse Timing Variations', 'Imaging', 'Microlensing', 'Orbital Brightness Modulation', 'Pulsar Timing', 'Pulsation Timing Variations', 'Radial Velocity', 'Transit', 'Transit Timing Variations'],
+    'method': ['Astrometry', 'Eclipse Timing Variations', 'Imaging', 'Microlensing', 'Orbital Brightness Modulation', 
+'Pulsar Timing', 'Pulsation Timing Variations', 'Radial Velocity', 'Transit', 'Transit Timing Variations'],
     'number': [0.0, 0.5, 0.933035, 0.387553, 0.577350, 1.095445, None, 1.157141, 1.399119, 0.5],
     'orbital_period': [544.217663, 2499.130945, 213978.177277, 1113.166333, 0.725493, 16313.265573, None, 1454.926210, 46.185893, 71.599884],
     'mass': [None, 1.308148, None, None, None, None, None, 3.825883, None, None],
